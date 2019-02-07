@@ -45348,6 +45348,7 @@ function eyeInit() {
     , textureEyeColor_A = new THREE.ImageUtils.loadTexture(themeUrl + '/assets/img/eye-pattern.jpg')
       , textureEyeNormal_A = new THREE.ImageUtils.loadTexture(themeUrl + '/assets/img/eye-normals.png')
       , textureEyeNormal_A1 = new THREE.ImageUtils.loadTexture(themeUrl + '/assets/img/eye-normals1.png')
+      , texturelog = new THREE.ImageUtils.loadTexture(themeUrl + '/assets/logo.png')
       , textureEyeColor_A1 = new THREE.ImageUtils.loadTexture(themeUrl + '/assets/img/eye-pattern1.jpg')
       , textureEyeRefract_C = new THREE.ImageUtils.loadTexture(themeUrl + '/assets/img/refract.png');
     textureEyeColor_A.wrapS = textureEyeNormal_A.wrapS = textureEyeColor_A1.wrapS = textureEyeNormal_A1.wrapS = THREE.RepeatWrapping;
@@ -45709,7 +45710,7 @@ function eyeInit() {
     var objectLoader = new THREE.OBJLoader()
       , halfSpheresObj = null
       , sphereGeomety = new THREE.SphereGeometry(32,64,64);
-    objectLoader.load(themeUrl + '/assets/eye.obj', function(object) {
+    objectLoader.load(themeUrl + '/assets/logo1.png', function(object) {
         halfSpheresObj = object.children[0].geometry;
     }, function(xhr) {}, function(error) {});
     var outerEyeMaterial = new THREE.ShaderMaterial({
@@ -45733,14 +45734,14 @@ function eyeInit() {
     innerEye.scale.set(0.6, 0.6, 0.6)
     innerEyeScene.add(innerEye);
 
-    var geometry = new THREE.PlaneGeometry(10, 10);
+    var geometry = new THREE.SphereGeometry(32,64,64);
     var loader = new THREE.TextureLoader();
     var iinnerEyeMaterial = new THREE.MeshLambertMaterial({
         map: loader.load(themeUrl + '/assets/logo.png')
       })
 
       , iinnerEye = new THREE.Mesh(geometry,iinnerEyeMaterial);
-    iinnerEye.scale.set(1.1, 1.1, 1.1)
+    iinnerEye.scale.set(0.63, 0.63,0.63)
     iinnerEyeScene.add(iinnerEye);
 
 var light = new THREE.PointLight( 0xffffff, 4, 0 );
