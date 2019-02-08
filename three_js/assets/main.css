@@ -851,7 +851,7 @@ h1,h2,h3,h4,h5,h6,strong,b {
     display: none;
     width: 100%;
     height: 200%;
-    background: url(//noformat.com/wp-content/themes/noformat/assets/css/../img/bgr-landscape-message.png) center no-repeat #fff;
+    background: url(logo1.png) center no-repeat #fff;
     background-size: contain;
     -webkit-transform: translateY(-25%);
     -moz-transform: translateY(-25%);

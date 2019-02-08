@@ -5692,7 +5692,7 @@ window.Detectizr = (function(window, navigator, document, undefined) {
                 } else {
                     preloadContainer.css('height', 'auto');
                 }
-                $('<div class="spinner"><span class="left"><i/></span><span class="right"><i/></span></div>').appendTo(preloadContainer);
+                $('<div class="spinner"><img style = "width:100px;height:100px" src = "./assets/logo1.png"></img></div>').appendTo(preloadContainer);
                 var preloadLoader = $('<div class="loader"></div>').appendTo(preloadContainer);
                 if (!settings.hidePercentage) {
                     var progressNotification = $('<div class="progress_notification">' + settings.loaderText + ' <span class="progress_percentage">' + progressPercentage + '</span>%</div>').appendTo(preloadLoader);
@@ -5804,9 +5804,9 @@ window.Detectizr = (function(window, navigator, document, undefined) {
                     if (spinnerStep == 360)
                         spinnerStep = 0;
                     $('.spinner').css({
-                        '-webkit-transform': 'rotate(' + spinnerStep + 'deg)',
-                        '-moz-transform': 'rotate(' + spinnerStep + 'deg)',
-                        'transform': 'rotate(' + spinnerStep + 'deg)',
+                        '-webkit-transform': 'rotate(' + 0 + 'deg)',
+                        '-moz-transform': 'rotate(' + 0 + 'deg)',
+                        'transform': 'rotate(' + 0 + 'deg)',
                     });
                     if ((spinnerStep % 315 == 0 || spinnerStep % 135 == 0 && spinnerStep % 270 != 0) && spinnerStep != 0) {
                         spinnerReady = true;
@@ -5832,9 +5832,9 @@ window.Detectizr = (function(window, navigator, document, undefined) {
                             });
                         } else {
                             $('.spinner span i').css({
-                                '-webkit-transform': 'rotate(' + 180 + 'deg)',
-                                '-moz-transform': 'rotate(' + 180 + 'deg)',
-                                'transform': 'rotate(' + 180 + 'deg)'
+                                '-webkit-transform': 'rotate(' + 0 + 'deg)',
+                                '-moz-transform': 'rotate(' + 0 + 'deg)',
+                                'transform': 'rotate(' + 0 + 'deg)'
                             });
                             spinnerReadyInterval = setInterval(function() {
                                 if (spinnerReady) {
@@ -5937,9 +5937,9 @@ window.Detectizr = (function(window, navigator, document, undefined) {
                                 progressNotification.children('span').html(Math.round((progressLoaded.width() / totalWidth) * 100));
                                 var spinnerAngle = (progressLoaded.width() / totalWidth) * 18000 / 100;
                                 $('.spinner span i').css({
-                                    '-webkit-transform': 'rotate(' + spinnerAngle + 'deg)',
-                                    '-moz-transform': 'rotate(' + spinnerAngle + 'deg)',
-                                    'transform': 'rotate(' + spinnerAngle + 'deg)'
+                                    '-webkit-transform': 'rotate(' + 0 + 'deg)',
+                                    '-moz-transform': 'rotate(' + 0 + 'deg)',
+                                    'transform': 'rotate(' + 0 + 'deg)'
                                 });
                             },
                             complete: function() {
@@ -44624,7 +44624,7 @@ var noformat = {
                     $('.intro .last').html(words[1]);
                 }, 200);
             }
-            //;introSlideshow();
+            introSlideshow();
             if (!$('html').hasClass('desktop')) {
                 $(document).bind('touchmove', function(e) {
                     e.preventDefault();
@@ -45710,7 +45710,7 @@ function eyeInit() {
     var objectLoader = new THREE.OBJLoader()
       , halfSpheresObj = null
       , sphereGeomety = new THREE.SphereGeometry(32,64,64);
-    objectLoader.load(themeUrl + '/assets/logo1.png', function(object) {
+    objectLoader.load(themeUrl + './assets/logo1.png', function(object) {
         halfSpheresObj = object.children[0].geometry;
     }, function(xhr) {}, function(error) {});
     var outerEyeMaterial = new THREE.ShaderMaterial({
@@ -45741,7 +45741,7 @@ function eyeInit() {
       })
 
       , iinnerEye = new THREE.Mesh(geometry,iinnerEyeMaterial);
-    iinnerEye.scale.set(0.63, 0.63,0.63)
+    iinnerEye.scale.set(0.6, 0.6, 0.6);
     iinnerEyeScene.add(iinnerEye);
 
 var light = new THREE.PointLight( 0xffffff, 4, 0 );
@@ -45894,9 +45894,9 @@ iinnerEyeScene.add(light);
                     iinnerEye.geometry = geometry;
             }
             var time = Date.now() * 0.005;
-            innerEyeUniforms.pupil_size.value = 0.1 * Math.sin(0.35 * time) + 0.3;
-            iinnerEyeUniforms.pupil_size.value = 0.1 * Math.sin(0.35 * time) + 0.3;
-            outerEyeUniforms.iris_size.value = 0.005 * Math.cos(0.5 * time) + 0.74;
+            innerEyeUniforms.pupil_size.value = 0.08 * Math.sin(0.35 * time) + 0.4;
+            iinnerEyeUniforms.pupil_size.value = 0.08 * Math.sin(0.35 * time) + 0.4;
+            outerEyeUniforms.iris_size.value = 0.005 * Math.cos(0.5 * time) + 0.75;
             var delta = clock.getDelta();
             if (innerEye != null) {
                 innerEye.lookAt(camera.position);
