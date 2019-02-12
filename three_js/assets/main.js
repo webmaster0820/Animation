@@ -45863,12 +45863,14 @@ iinnerEyeScene.add(light);
                     }
                     if (bloomTimer < flash + 0.15) {
                         outerEye.scale.set(0.0, 0.0, 0.0);
+                        iinnerEye.scale.set(0.0, 0.0, 0.0);
                     }
                     if (bloomTimer > 23 && bloomTimer < 23.5) {
                         showHideObj(innerEye, false);
                         showHideObj(iinnerEye, false);
                         showHideObj(outerEye, false);
                         outerEye.scale.set(0.6, 0.6, 0.6);
+                        innerEye.scale.set(0.6, 0.6, 0.6);
                     } else if (bloomTimer > 23.5) {
                         showHideObj(innerEye, true);
                         showHideObj(iinnerEye, true);
@@ -45878,6 +45880,7 @@ iinnerEyeScene.add(light);
                         if (iinnerEye != null)
                             iinnerEye.geometry = geometry;
                         outerEye.scale.set(0.6, 0.6, 0.6);
+                        iinnerEye.scale.set(0.6, 0.6, 0.6);
                     }
                 }
                 if (bloomTimer > 25) {
