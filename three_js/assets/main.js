@@ -45741,7 +45741,7 @@ function eyeInit() {
       })
 
       , iinnerEye = new THREE.Mesh(geometry,iinnerEyeMaterial);
-    iinnerEye.scale.set(0.6, 0.6, 0.6);
+    iinnerEye.scale.set(0.0, 0.0, 0.0);
     iinnerEyeScene.add(iinnerEye);
 
 var light = new THREE.PointLight( 0xffffff, 4, 0 );
