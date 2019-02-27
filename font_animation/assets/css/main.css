@@ -1,0 +1,71 @@
+@import url(font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
+@font-face { font-family: bold_font; font-weight: bold; src: url('../fonts/AkzidenzGroteskBQ-Super.otf');}
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+body * {
+  box-sizing: border-box;
+  
+}
+
+.ipad-frame {
+  position: absolute;
+  left: 0;
+  top: 0;
+  left: 45.3%;
+  top: 33.2%;
+  width: 1024px;
+  height: 768px;
+  /* background-color: rgb(170, 248, 192); */
+  margin: auto;
+  transform: skew(30deg, -17deg);
+  padding: 3.5% 0% 0% 2.4%;
+  zoom: 0.25;
+  -webkit-perspective: 500px;
+  perspective: 500px; 
+
+}
+.word-content {
+  position: absolute;
+}
+.letter {
+  height: 10%;
+  width: auto;
+  color: aliceblue;
+  font-size: 110px;
+  display: inline-block;
+  font-weight: 900;
+  font-family: bold_font;
+}
+
+@keyframes example {
+  0% {
+    transform: rotateY(0);
+  }
+  25% {
+    transform: rotateY(+50deg);
+  }
+  50% {
+    transform: rotateY(+200deg);
+  }
+  100% {
+    transform: rotateY(+160deg);
+  }
+}
+
+.full-background {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 0;
+  padding-top: 49.0936%;
+  box-sizing: content-box;
+  background: url(../../images/iPad-LandingPage.jpg) no-repeat center center;
+  background-size: contain;
+  overflow: overlay;
+}
+
